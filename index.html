@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockly Custom Blocks Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/blockly/blockly.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🧩 Blockly Custom Blocks Demo</h1>
+            <p>Drag blocks to create data processing workflows</p>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Blockly Workspace (70%) -->
+            <div class="workspace-container">
+                <div id="blocklyDiv"></div>
+            </div>
+
+            <!-- Right Panel (30%) -->
+            <div class="right-panel">
+                <!-- Control Buttons -->
+                <div class="controls">
+                    <button id="generateBtn" class="btn btn-primary">
+                        <span>📝</span> Generate Code
+                    </button>
+                    <button id="runBtn" class="btn btn-success">
+                        <span>▶️</span> Run
+                    </button>
+                    <button id="clearBtn" class="btn btn-danger">
+                        <span>🗑️</span> Clear
+                    </button>
+                </div>
+
+                <!-- Code Preview -->
+                <div class="panel code-panel">
+                    <h3>Generated JavaScript</h3>
+                    <pre id="codeOutput" class="code-output"></pre>
+                </div>
+
+                <!-- Results Display -->
+                <div class="panel results-panel">
+                    <h3>Output</h3>
+                    <div id="resultsOutput" class="results-output"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blockly Toolbox -->
+    <xml id="toolbox" style="display: none">
+        <category name="Data Creation" colour="#5C81A6">
+            <block type="create_array"></block>
+            <block type="create_number"></block>
+            <block type="create_text"></block>
+        </category>
+        <category name="Array Operations" colour="#5CA68D">
+            <block type="add_item"></block>
+            <block type="filter_array"></block>
+            <block type="map_array"></block>
+            <block type="sort_array"></block>
+        </category>
+        <category name="Calculations" colour="#A65C81">
+            <block type="calculate_sum"></block>
+            <block type="calculate_average"></block>
+            <block type="find_max"></block>
+        </category>
+        <category name="Output" colour="#D4A65C">
+            <block type="display_result"></block>
+            <block type="display_chart"></block>
+        </category>
+    </xml>
+
+    <script src="blocks.js"></script>
+    <script src="generators.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
